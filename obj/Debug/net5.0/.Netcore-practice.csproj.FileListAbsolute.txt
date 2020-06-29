@@ -35,3 +35,5 @@ C:\Users\EricLin\OneDrive\文件\GitHub\.Netcore-practice\obj\Debug\net5.0\.Netc
 C:\Users\EricLin\OneDrive\文件\GitHub\.Netcore-practice\obj\Debug\net5.0\.Netcore-practice.pdb
 C:\Users\EricLin\OneDrive\文件\GitHub\.Netcore-practice\obj\Debug\net5.0\.Netcore-practice.genruntimeconfig.cache
 C:\Users\EricLin\OneDrive\文件\GitHub\.Netcore-practice\obj\Debug\net5.0\.Netcore-practice.csproj.CopyComplete
+C:\Users\EricLin\OneDrive\文件\GitHub\.Netcore-practice\bin\Debug\net5.0\bower.json
+C:\Users\EricLin\OneDrive\文件\GitHub\.Netcore-practice\obj\Debug\net5.0\Razor\Pages\Home\SqlData.cshtml.g.cs

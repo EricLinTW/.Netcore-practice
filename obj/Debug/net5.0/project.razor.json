@@ -20536,6 +20536,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\EricLin\\OneDrive\\文件\\GitHub\\.Netcore-practice\\Pages\\Home\\SqlData.cshtml",
+      "TargetPath": "Pages\\Home\\SqlData.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\EricLin\\OneDrive\\文件\\GitHub\\.Netcore-practice\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"

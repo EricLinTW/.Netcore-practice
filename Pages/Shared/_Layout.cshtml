@@ -1,50 +1,115 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - _Netcore_practice</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 聯強新人訓練</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </environment>
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">_Netcore_practice</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="@Url.Action("Index", "Home")">Eric Practice</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/index"> Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    實作頁面展示
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/SqlData"> SQLData <span class="sr-only"></span></a>
+                    <a class="dropdown-item" href="@Url.Action("Linqtest", "Home")"> Linqtest <span class="sr-only"></span></a>
+                    <a class="dropdown-item" href="@Url.Action("EntityFramework", "Home")"> EntityFramework OrderMst <span class="sr-only"></span></a>
+                    <a class="dropdown-item" href="@Url.Action("Create", "Home")"> EntityFramework Create <span class="sr-only"></span></a>
+                    <a class="dropdown-item" href="@Url.Action("Html", "Home")"> Html Practice <span class="sr-only"></span></a>
+                    <a class="dropdown-item" href="@Url.Action("Mvvm", "Home")"> MVVM實作 <span class="sr-only"></span></a>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Will do Something else here</a>
                 </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="@Url.Action( "About", "Home")"> About <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="@Url.Action( "Contact", "Home")"> Contact <span class="sr-only"></span></a>
+            </li>
+            @*<li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Home")">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">@Html.ActionLink("關於", "About", "Home")</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">@Html.ActionLink("聯絡我", "Contact", "Home")</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">@Html.ActionLink("SQL Data", "SQLData", "Home")</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">@Html.ActionLink("Linq測試頁面", "Linqtest", "Home")</a>
+                </li>*@
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Eric聯強教育訓練展示</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 " role="search" method="get" id="searchform1" action="https://cse.google.com/cse">
+            <input type="hidden" name="cx" value="015114045001122236701:yll4zwbrolq" />
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value="" name="q">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit" name="sa" value="搜尋">Search</button>
+        </form>
+    </div>
+</nav>
+<body>
+
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Eric的簡易實作</p>
+        </footer>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - _Netcore_practice - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+                crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+                crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+                crossorigin="anonymous">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
