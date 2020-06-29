@@ -1,3 +1,5 @@
+@page
+@model SqlDataModel
 @{
     ViewBag.Title = "SQL Data";
 
@@ -7,9 +9,7 @@
 }
 <h1>@ViewBag.Title</h1>
 
-@model _Netcore_practice.Models.Orderinfo
-
-<form style="margin-left:10px;" method="post" action="/Transcripts">
+@* <form style="margin-left:10px;" method="post" action="/Transcripts">
     <div class="input-group">
         <label>OrderNo</label>
         <input type="text" class="form-control" id="OrderNo" name="OrderNo" aria-describedby="emailHelp" placeholder="Enter OrderNo" value="@Model.OrderNo">
@@ -23,7 +23,7 @@
         <input type="text" class="form-control" id="Reseller_No" name="Reseller_No" aria-describedby="emailHelp" placeholder="Enter Reseller_No" value="@Model.ResellerNo">
     </div>
     <button type="submit" class="btn btn-primary">確定</button>
-</form>
+</form> *@
 
 @*<style>
         div {
